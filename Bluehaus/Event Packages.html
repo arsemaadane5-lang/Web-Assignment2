@@ -6,6 +6,7 @@
     <title>Bluehaus</title>
     <link rel="stylesheet" href="styleEP.css">
 </head>
+<script src="script.js"></script>
 
 <body>
 
@@ -35,6 +36,11 @@
             <li>Classic and contemporary jazz styles</li>
             <li>Evening ambiance and comfortable seating</li>
         </ul>
+        
+          <div class="jazz-gallery">
+        <img src="images/jazz1.jpg" alt="Jazz 1">
+        <img src="images/jazz2.jpg" alt="Jazz 2"> 
+    </div>
     </section>
 
     <section class="section card">
@@ -50,6 +56,12 @@
             <li>Photography inspired by live music</li>
             <li>Works by local and emerging artists</li>
         </ul>
+          
+        <div class="art-gallery">
+        <img src="Images/art1.jpg" alt="Art 1">
+        <img src="Images/art2.jpg" alt="Art 2">
+        <img src="Images/art3.jpg" alt="Art 3">
+    </div>
     </section>
 
     <section class="section card">
@@ -111,15 +123,18 @@
                 <label><input type="radio" name="session"> Late Night Standard</label>
                 <label><input type="radio" name="session"> Late Night Deluxe</label>
             </div>
+            <input type="submit" value="Reserve Now">
         </form>
     </section>
 
     <footer class="footer">
         <hr>
-        <p>© 2025 Bluehaus</p>
+        <p>© <span id="year"></span> Bluehaus</p>
+
     </footer>
 
 </div>
 
 </body>
 </html>
+
