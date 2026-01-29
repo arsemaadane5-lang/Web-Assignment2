@@ -6,7 +6,8 @@
     <title>Bluehaus</title>
     <link rel="stylesheet" href="styleI.css">
 </head>
-
+<script src="script.js"></script>
+    
 <body>
 
 <div class="container">
@@ -26,33 +27,54 @@
     </div>
 </header>
 
-<section class="section card">
-    <h2>Welcome</h2>
-    <p>
-        Bluehaus is an event that brings together live jazz
-        performances and a curated art exhibition. The event is designed to create
-        a relaxed and creative atmosphere where guests can enjoy music, art, and
-        meaningful social interaction.
-    </p>
-</section>
+<section class="welcome-section">
 
-<section class="section2 card">
-    <h2>What We Offer</h2>
-    <ul>
-        <li>Live jazz performances by talented musicians</li>
-        <li>Jazz-inspired visual art and photography</li>
-        <li>An elegant and welcoming evening atmosphere</li>
-        <li>A space for art and music lovers to connect</li>
-    </ul>
+    <div class="welcome-left card">
+        <h2>Welcome</h2>
+        <p>
+            Bluehaus is an event that brings live jazz and visual art together
+            in a relaxed atmosphere where meaningful social interaction thrives.
+        </p>
+    </div>
+
+    <div class="welcome-right">
+        <div class="card">
+            <h2>Welcome</h2>
+            <p>
+                Bluehaus is an event that brings together live jazz performances
+                and curated visual art exhibitions. The event is designed to
+                create a relaxed and creative atmosphere where guests can enjoy
+                music, art, and meaningful social interaction.
+            </p>
+        </div>
+
+        <div class="upcoming-event">
+            <h3>Upcoming Event</h3>
+
+            <div class="event-card">
+                <img src="images/jazz1.jpg" alt="Jazz Event">
+                <div class="event-info">
+                    <p><strong>January 29, 2026</strong></p>
+                    <p>The Jazz & Art Gala</p>
+
+                    <a href="Event Packages.html" class="btn small">
+                        Reserve Tickets
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 <footer class="footer">
     <hr color="#c9a27e">
-    <p>© 2025 Bluehaus</p>
+  <p>© <span id="year"></span> Bluehaus</p>
 </footer>
 
 </div>
 
 </body>
 </html>
+
 
