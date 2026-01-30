@@ -112,5 +112,16 @@ const yearSpan = document.getElementById("year");
 if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
 }
+    const pageText = document.getElementById("lastPage");
+
+const pageName = document.title;
+localStorage.setItem("lastPage", pageName);
+
+if (pageText) {
+    const last = localStorage.getItem("lastPage");
+    pageText.textContent = "Last visited page: " + last;
+}
+
 });
+
 
