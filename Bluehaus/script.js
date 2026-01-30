@@ -4,18 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const homeIntro = document.querySelector("header p em");
 
     if (homeTitle && homeIntro && homeTitle.textContent === "Bluehaus") {
-        const hour = new Date().getHours();
-        let greeting = "Welcome to Bluehaus";
-
-        homeIntro.textContent = `${greeting} — where live music meets visual art`;
+        homeIntro.textContent =
+            "Welcome to Bluehaus — where live music meets visual art";
     }
 
     const sections = document.querySelectorAll(".section");
 
     if (sections.length > 0) {
         const aboutData = {
-            story: "Bluehaus was created as a cultural space where jazz music and visual art come together. It was founded to bring artists and audiences closer through intimate experiences.",
-            why: "Bluehaus supports creativity, community, and artistic expression by giving space to local and emerging artists in a warm and welcoming environment."
+            story:
+                "Bluehaus was created as a cultural space where jazz music and visual art come together. It was founded to bring artists and audiences closer through intimate experiences.",
+            why:
+                "Bluehaus supports creativity, community, and artistic expression by giving space to local and emerging artists in a warm and welcoming environment."
         };
 
         sections.forEach(section => {
@@ -39,12 +39,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const navLinks = document.querySelectorAll(".nav a");
-    const currentPage = window.location.pathname.split("/").pop();
+    const savedNav = localStorage.getItem("activeNav");
 
     navLinks.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
+        if (link.getAttribute("href") === savedNav) {
             link.classList.add("active");
         }
+
+        link.addEventListener("click", () => {
+            localStorage.setItem("activeNav", link.getAttribute("href"));
+        });
     });
 
     const contactForm = document.querySelector("section.contact-card form");
@@ -53,6 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const nameInput = contactForm.querySelector('input[type="text"]');
         const emailInput = contactForm.querySelector('input[type="email"]');
         const messageInput = contactForm.querySelector("textarea");
+
+        nameInput.value = localStorage.getItem("contactName") || "";
+
+        nameInput.addEventListener("input", () => {
+            localStorage.setItem("contactName", nameInput.value);
+        });
 
         contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -66,9 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            let messages = localStorage.getItem("bluehausMessages");
-            messages = messages ? Number(messages) + 1 : 1;
-            localStorage.setItem("bluehausMessages", messages);
+            localStorage.removeItem("contactName");
 
             alert("Thank you for contacting Bluehaus! We will get back to you soon.");
             contactForm.reset();
@@ -81,6 +89,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const nameInput = reservationForm.querySelector('input[type="text"]');
         const emailInput = reservationForm.querySelector('input[type="email"]');
         const sessionInputs = reservationForm.querySelectorAll('input[type="radio"]');
+
+        nameInput.value = localStorage.getItem("reserveName") || "";
+
+        nameInput.addEventListener("input", () => {
+            localStorage.setItem("reserveName", nameInput.value);
+        });
 
         reservationForm.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -99,29 +113,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            let reservations = localStorage.getItem("bluehausReservations");
-            reservations = reservations ? Number(reservations) + 1 : 1;
-            localStorage.setItem("bluehausReservations", reservations);
+            localStorage.removeItem("reserveName");
 
             alert("Reservation successful! We look forward to seeing you at Bluehaus.");
             reservationForm.reset();
         });
     }
-const yearSpan = document.getElementById("year");
 
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-}
-    const pageText = document.getElementById("lastPage");
-
-const pageName = document.title;
-localStorage.setItem("lastPage", pageName);
-
-if (pageText) {
-    const last = localStorage.getItem("lastPage");
-    pageText.textContent = "Last visited page: " + last;
-}
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 
 });
-
-
