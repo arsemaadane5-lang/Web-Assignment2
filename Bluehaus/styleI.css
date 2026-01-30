@@ -24,15 +24,29 @@ body {
 }
 
 .nav {
-    text-align: right;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    padding: 16px 20px;
+    margin-bottom: 25px;
+
+    background: #070a1f;   
+    border-radius: 18px;
+
+    box-shadow: inset 0 0 0 1px #1a2b50;
 }
 
 .nav a {
-    margin-left: 15px;
-    color: #82aaff; 
+    color: #82aaff;
     text-decoration: none;
     font-weight: 500;
+    padding: 6px 10px;
+    transition: color 0.2s;
+}
+.nav a:visited {
+    color: #a3b1f4;
 }
 
 .nav a:hover {
@@ -41,13 +55,13 @@ body {
 }
 
 .nav a.active {
-    color: #a8c0ff; 
-    font-weight: 600;
-    text-decoration: underline;
+    color: #a8c0ff;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .nav a:visited {
-    color: #7090d2; 
+    color: #a4b2f4;
 }
 
 .title {
@@ -186,5 +200,6 @@ hr {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 
 
