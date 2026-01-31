@@ -8,10 +8,6 @@ body {
     width: 100%;
 }
 
-.nav a:visited {
-    color: #7090d2;
-}
-
 header .title {
     text-align: center;
     font-size: 2.5rem;
@@ -41,3 +37,4 @@ header .title {
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
 }
+
