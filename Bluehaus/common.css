@@ -34,7 +34,9 @@ body {
     padding: 6px 10px;
     transition: color 0.2s;
 }
-
+.nav a:visited {
+    color: #a3b1f4;
+}
 .nav a:hover {
     color: #a8c0ff;
     text-decoration: underline;
@@ -66,3 +68,4 @@ hr {
     opacity: 0.6;
     margin-bottom: 10px;
 }
+
