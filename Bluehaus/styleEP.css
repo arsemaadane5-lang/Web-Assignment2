@@ -9,10 +9,6 @@ body {
     width: 100%;
 }
 
-.nav a:visited {
-    color: #7090d2;
-}
-
 h1, .title {
     text-align: center;
     font-size: 2.5rem;
@@ -134,3 +130,4 @@ h1, .title {
     gap: 8px;
     margin-top: 5px;
 }
+
